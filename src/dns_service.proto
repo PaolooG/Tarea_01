@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package dns_service;
+
+// Definición del servicio gRPC
+service DNSCache {
+  // RPC para obtener la respuesta DNS
+  rpc GetDNSResponse (DNSRequest) returns (DNSResponse);
+}
+
+// Mensaje para la solicitud DNS
+message DNSRequest {
+  string domain = 1;
+}
+
+// Mensaje para la respuesta DNS
+message DNSResponse {
+  string ip_address = 1;
+}
